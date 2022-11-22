@@ -14,11 +14,18 @@ type Post @model {
   id: ID!
   title: String!
   url: URL! @unique
+  votes: [Vote]
   comments: [Comment!]
 }
 
 type Comment @model {
   id: ID!
   message: String!
+  post: Post!
+}
+
+type Vote @model {
+  id: ID!
+  rating: Int
   post: Post!
 }
