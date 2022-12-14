@@ -22,6 +22,7 @@ type Post @model {
 type Comment @model {
   id: ID!
   message: String!
+  posted: Date!
   post: Post!
 }
 
